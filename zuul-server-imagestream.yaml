@@ -12,10 +12,10 @@ spec:
     - annotations: null
       from:
         kind: DockerImage
-        name: sebas1411/zuul-server:v4
+        name: sebas1411/zuul-server:v5
       generation: null
       importPolicy: {}
-      name: v4
+      name: v5
       referencePolicy:
         type: ""
 status:

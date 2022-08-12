@@ -7,7 +7,7 @@ services:
       - "8761:8761"
 
   zuul-server:
-    image: sebas1411/zuul-server:v4
+    image: sebas1411/zuul-server:v5
     ports:
       - "8090:8090"
     depends_on:
@@ -24,7 +24,7 @@ services:
       - zuul-server
     environment:
       eureka.client.serviceUrl.defaultZone: http://eureka-server:8761/eureka
-      spring.datasource.url: jdbc:postgresql://172.21.101.55:5432/sampledb
+      spring.datasource.url: jdbc:postgresql://172.21.8.3:5432/sampledb
       spring.datasource.username: postgresadmin
       spring.datasource.password: Passw0rd2020 
 
@@ -37,7 +37,7 @@ services:
       - zuul-server
     environment:
       eureka.client.serviceUrl.defaultZone: http://eureka-server:8761/eureka
-      spring.datasource.url: jdbc:postgresql://172.21.101.55:5432/sampledb
+      spring.datasource.url: jdbc:postgresql://172.21.8.3:5432/sampledb
       spring.datasource.username: postgresadmin
       spring.datasource.password: Passw0rd2020
 
@@ -50,6 +50,6 @@ services:
       - zuul-server
     environment:
       eureka.client.serviceUrl.defaultZone: http://eureka-server:8761/eureka
-      spring.datasource.url: jdbc:postgresql://172.21.101.55:5432/sampledb
+      spring.datasource.url: jdbc:postgresql://172.21.8.3:5432/sampledb
       spring.datasource.username: postgresadmin
       spring.datasource.password: Passw0rd2020
