@@ -36,7 +36,7 @@ spec:
           - zuul-server
         from:
           kind: ImageStreamTag
-          name: zuul-server:v1
+          name: zuul-server:v3
       type: ImageChange
 status:
   availableReplicas: 0

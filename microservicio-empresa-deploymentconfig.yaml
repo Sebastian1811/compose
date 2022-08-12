@@ -3,26 +3,32 @@ kind: DeploymentConfig
 metadata:
   creationTimestamp: null
   labels:
-    io.kompose.service: microservicio-empresas
-  name: microservicio-empresas
+    io.kompose.service: microservicio-empresa
+  name: microservicio-empresa
 spec:
   replicas: 1
   selector:
-    io.kompose.service: microservicio-empresas
+    io.kompose.service: microservicio-empresa
   strategy:
     resources: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        io.kompose.service: microservicio-empresas
+        io.kompose.service: microservicio-empresa
     spec:
       containers:
         - env:
             - name: eureka.client.serviceUrl.defaultZone
               value: http://eureka-server:8761/eureka
+            - name: spring.datasource.password
+              value: Passw0rd2020
+            - name: spring.datasource.url
+              value: jdbc:postgresql://172.21.2.171:5432/sampledb
+            - name: spring.datasource.username
+              value: postgresadmin
           image: ' '
-          name: microservicio-empresas
+          name: microservicio-empresa
           ports:
             - containerPort: 8890
           resources: {}
@@ -33,10 +39,10 @@ spec:
     - imageChangeParams:
         automatic: true
         containerNames:
-          - microservicio-empresas
+          - microservicio-empresa
         from:
           kind: ImageStreamTag
-          name: microservicio-empresas:v1
+          name: microservicio-empresa:v2
       type: ImageChange
 status:
   availableReplicas: 0

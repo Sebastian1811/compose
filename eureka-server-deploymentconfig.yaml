@@ -33,7 +33,7 @@ spec:
           - eureka-server
         from:
           kind: ImageStreamTag
-          name: eureka-server:v1
+          name: eureka-server:v2
       type: ImageChange
 status:
   availableReplicas: 0

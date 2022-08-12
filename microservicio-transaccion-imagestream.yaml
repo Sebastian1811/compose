@@ -3,8 +3,8 @@ kind: ImageStream
 metadata:
   creationTimestamp: null
   labels:
-    io.kompose.service: microservicio-empresas
-  name: microservicio-empresas
+    io.kompose.service: microservicio-transaccion
+  name: microservicio-transaccion
 spec:
   lookupPolicy:
     local: false
@@ -12,10 +12,10 @@ spec:
     - annotations: null
       from:
         kind: DockerImage
-        name: sebas1411/microservicio-empresa:v1
+        name: sebas1411/microservicio-transaccion:v2
       generation: null
       importPolicy: {}
-      name: v1
+      name: v2
       referencePolicy:
         type: ""
 status:

@@ -3,26 +3,32 @@ kind: DeploymentConfig
 metadata:
   creationTimestamp: null
   labels:
-    io.kompose.service: microservicio-transacciones
-  name: microservicio-transacciones
+    io.kompose.service: microservicio-transaccion
+  name: microservicio-transaccion
 spec:
   replicas: 1
   selector:
-    io.kompose.service: microservicio-transacciones
+    io.kompose.service: microservicio-transaccion
   strategy:
     resources: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        io.kompose.service: microservicio-transacciones
+        io.kompose.service: microservicio-transaccion
     spec:
       containers:
         - env:
             - name: eureka.client.serviceUrl.defaultZone
               value: http://eureka-server:8761/eureka
+            - name: spring.datasource.password
+              value: Passw0rd2020
+            - name: spring.datasource.url
+              value: jdbc:postgresql://172.21.2.171:5432/sampledb
+            - name: spring.datasource.username
+              value: postgresadmin
           image: ' '
-          name: microservicio-transacciones
+          name: microservicio-transaccion
           ports:
             - containerPort: 8020
           resources: {}
@@ -33,10 +39,10 @@ spec:
     - imageChangeParams:
         automatic: true
         containerNames:
-          - microservicio-transacciones
+          - microservicio-transaccion
         from:
           kind: ImageStreamTag
-          name: microservicio-transacciones:v1
+          name: microservicio-transaccion:v2
       type: ImageChange
 status:
   availableReplicas: 0
