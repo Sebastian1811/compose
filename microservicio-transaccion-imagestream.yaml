@@ -12,10 +12,10 @@ spec:
     - annotations: null
       from:
         kind: DockerImage
-        name: sebas1411/microservicio-transaccion:v2
+        name: sebas1411/microservicio-transaccion:v3
       generation: null
       importPolicy: {}
-      name: v2
+      name: v3
       referencePolicy:
         type: ""
 status:
